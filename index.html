@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>leondrolio.co.uk</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      font-family: 'Comic Sans MS';
+      background-image: url('rhultile.bmp');
+    }
+
+    .rave {
+      color: red;
+      animation-name: rave;
+      animation-duration: 3s;
+      animation-iteration-count: infinite;
+    }
+
+    .marquee-container {
+      background-color: black;
+      overflow-x: hidden;
+    }
+
+    .marquee {
+      color: red;
+      font-size: 16pt;
+      animation-name: marquee;
+      animation-duration: 5s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+      display: inline-block
+    }
+
+    header,
+    main,
+    footer {
+      padding: 5px;
+    }
+
+    .tapir {
+      width: 600px;
+    }
+
+    dt {
+      font-weight: bold;
+    }
+
+    dd {
+      margin-bottom: 1em;
+    }
+
+
+    @keyframes rave {
+      0% {
+        filter: hue-rotate(0deg);
+      }
+
+      25% {
+        filter: hue-rotate(90deg);
+      }
+
+      50% {
+        filter: hue-rotate(180deg);
+      }
+
+      75% {
+        filter: hue-rotate(270deg);
+      }
+
+      100% {
+        filter: hue-rotate(360deg);
+      }
+    }
+
+    @keyframes marquee {
+      from {
+        transform: translateX(100vw);
+      }
+
+      to {
+        transform: translateX(-100%);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    leondrolio.co.uk
+  </header>
+  <main>
+    <div class="marquee-container rave">
+      <div class="marquee">Welcome to my website! You are the <span id="counter">0th</span> visitor!!!!</div>
+    </div>
+    <h1 class="rave">Home Page</h1>
+    <p>Welcome to my website!</p>
+    <p>
+      In my website, you can find my latest projects from the likes
+      of my GitHub, my GitLab, my GitBucket, my GitGit and GitWhatevs!
+    </p>
+    <ul>
+      <li><a href="https://leondrolio.com/projects/gittags">GitTags</a></li>
+      <li><a href="https://leondrolio.com/projects/circuitrcay-flutter">Circuit</a></li>
+    </ul>
+    <h2 class="rave">K-pop</h2>
+    <p>
+      Here are my favourite K-pop groups
+    </p>
+    <ol>
+      <li>loonatheworld</li>
+      <li>Twice</li>
+      <li>Cosmic Girls (WJSN)</li>
+      <li>Red Velvet</li>
+      <li>Cherry Bullet</li>
+      <li>fromis_9</li>
+    </ol>
+    <h2 class="rave">Definitions</h2>
+    <dl>
+      <dt>YeoJin</dt>
+      <dl>The maknae of LOONA, and probably the shortest member.</dl>
+
+      <dt>Chuu</dt>
+      <dl>The cutest member. ❤❤</dl>
+
+      <dt>HyunJin</dt>
+      <dl>The cat - goes aeong!!!</dl>
+    </dl>
+    <h2 class="rave">Second Page</h2>
+    <p>
+      Click <a href="pagetwo.html">here</a> to see my second page!!!!
+    </p>
+    <h2 class="rave">Tapir</h2>
+    <img class="tapir" src="tapir.jpg" />
+  </main>
+  <footer>
+    <hr />
+    <p>
+      leondrolio.co.uk is a website in the <a href="https://leondrolio.com">leondrolio.com</a> group of websites.
+    </p>
+    <p>Visit me on <a href="http://yahoo.com.hk">Yahoo!!</a> or <a href="http://geocities.com">GeoCities!!!!</a></p>
+  </footer>
+
+  <script>
+    const counter = document.getElementById('counter');
+    const count = Math.floor(Math.random() * 1000000);
+    let suffix = 'th';
+
+    switch (count % 10) {
+      case 1:
+        suffix = 'st';
+        break;
+      case 2:
+        suffix = 'nd';
+        break;
+      case 3:
+        suffix = 'rd';
+        break;
+    }
+
+    counter.innerText = count + suffix
+  </script>
+</body>
+
+</html>
