@@ -141,6 +141,47 @@
     <a href="https://app.netlify.com/sites/dazzling-kowalevski-bd24b0/deploys">
       <img src="https://api.netlify.com/api/v1/badges/e1673390-8bc3-4caa-8477-2a9376a4187b/deploy-status" />
     </a>
+    <h2 class="rave">Currency Converter</h2>
+    <input id="fahrenheit" placeholder="degrees fahrenheit" />
+    <input id="fahrenheit_button" type="submit">
+    <pre id="content"></pre>
+    <pre>
+      <script>
+        const content = document.getElementById('content');
+        const value = document.getElementById('fahrenheit');
+        const button = document.getElementById('fahrenheit_button');
+
+        button.addEventListener('click', () => {
+          convert(value.value)
+        })
+
+        const convert = (f) => {
+          const fahr = parseInt(f, 10);
+          const cent = ((fahr - 32) / 9) * 5;
+
+          content.innerHTML=`${fahr} F\n${cent} C`
+        }
+      </script>
+    </pre>
+    <h2 class="rave">Buddon</h2>
+    <div id="buttons">
+      <button data-label="first">First</button>
+      <button data-label="second">Second</button>
+      <button data-label="third" data-style="color: green">Third</button>
+    </div>
+    <p id="button_return">You pressed no button</p>
+    <script>
+      const buttonsContainer = document.getElementById('buttons');
+      const buttons = buttonsContainer.getElementsByTagName('button');
+      const buttonReturn = document.getElementById('button_return');
+
+      [...buttons].forEach((button) => {
+        button.addEventListener('click', () => {
+          buttonReturn.innerText = `You pressed the ${button.dataset.label} button`;
+          buttonReturn.style = button.dataset.style
+        })
+      })
+    </script>
   </main>
   <footer>
     <hr />
