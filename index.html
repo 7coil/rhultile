@@ -35,6 +35,15 @@
       display: inline-block
     }
 
+    .the-table {
+      width: 100%;
+    }
+
+    .the-table, .the-table td {
+      border-style: solid;
+      border-width: 5px;
+    }
+
     header,
     main,
     footer {
@@ -182,6 +191,25 @@
         })
       })
     </script>
+
+    <h2 class="rave">Table</h2>
+    <table class="the-table">
+      <thead>
+        <tr>
+          <th>Hello</th>
+          <th>World!</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>2</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2 class="rave">Cubes!</h2>
+    <button onclick="const a = parseInt(prompt('start'), 10);const b = parseInt(prompt('terms'), 10);for (let i = a; i < (a + b); i++){alert(`${i} cubed is ${Math.pow(i, 3)}`)}">Cube it!</button>
   </main>
   <footer>
     <hr />
